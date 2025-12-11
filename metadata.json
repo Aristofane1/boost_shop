@@ -1,0 +1,5 @@
+{
+  "name": "BoostShop - WhatsApp Automation",
+  "description": "A stateless SaaS platform connecting Django backend with Evolution API for WhatsApp automation, utilizing generic AI models (Mistral/Qwen) and commission-based financing.",
+  "requestFramePermissions": []
+}
