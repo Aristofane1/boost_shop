@@ -135,7 +135,7 @@ const SupportPage: React.FC = () => {
                               </span>
                           </summary>
                           <p className="text-xs text-gray-500 mt-2 group-open:animate-fadeIn">
-                              Allez dans la section Finance > Retrait > Configurer. Vous pouvez ajouter un numéro Mobile Money.
+                              Allez dans la section Finance {'>'} Retrait {'>'} Configurer. Vous pouvez ajouter un numéro Mobile Money.
                           </p>
                       </details>
                       <div className="border-t border-gray-100 dark:border-gray-700 my-2"></div>
