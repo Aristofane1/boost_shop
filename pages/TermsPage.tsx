@@ -24,7 +24,7 @@ const TermsPage: React.FC = () => {
             <p>Pour utiliser le service, vous devez créer un compte. Vous êtes responsable du maintien de la confidentialité de votre compte et de votre mot de passe. Vous acceptez de nous informer immédiatement de toute utilisation non autorisée de votre compte.</p>
 
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-8">4. Modèle de Commission</h2>
-            <p>L'inscription à BoostShop est gratuite. Nous prélevons une commission de 10% sur chaque vente réalisée via notre plateforme. En utilisant nos services pour vendre des produits, vous acceptez ce prélèvement automatique sur vos transactions.</p>
+            <p>L'inscription à BoostShop est gratuite. Nous prélevons une commission variable entre 1,5% et 5% sur chaque vente réalisée via notre plateforme. En utilisant nos services pour vendre des produits, vous acceptez ce prélèvement automatique sur vos transactions.</p>
 
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-8">5. Utilisation acceptable</h2>
             <p>Vous acceptez de ne pas utiliser le service à des fins illégales ou interdites par ces conditions. Vous ne devez pas violer les lois de votre juridiction (y compris, mais sans s'y limiter, les lois sur le droit d'auteur).</p>

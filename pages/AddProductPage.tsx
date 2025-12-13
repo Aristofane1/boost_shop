@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { PaymentConfig, Product, StockStatus } from '../types';
 
@@ -240,7 +240,7 @@ const AddProductPage: React.FC = () => {
                 <span className="material-symbols-outlined text-blue-600 dark:text-blue-400 shrink-0">info</span>
                 <div>
                     <p className="text-sm font-semibold text-blue-800 dark:text-blue-300">Information importante sur la commission</p>
-                    <p className="text-sm text-blue-700 dark:text-blue-400 mt-1">BoostShop prélève une commission de <span className="font-bold">10%</span> sur chaque vente. Assurez-vous d'avoir assez de solde prépayé.</p>
+                    <p className="text-sm text-blue-700 dark:text-blue-400 mt-1">BoostShop prélève une commission entre <span className="font-bold">1,5% et 5%</span> sur chaque vente. Assurez-vous d'avoir assez de solde prépayé.</p>
                 </div>
             </div>
 
@@ -257,7 +257,7 @@ const AddProductPage: React.FC = () => {
                             className="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-transparent dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/50 focus:border-primary" 
                         />
                          {formData.price && (
-                            <p className="text-xs text-gray-500 mt-1">Commission estimée (10%): <span className="font-bold text-red-500">-{formatPrice(Number(formData.price) * 0.1)} XOF</span></p>
+                            <p className="text-xs text-gray-500 mt-1">Commission estimée (max 5%): <span className="font-bold text-red-500">-{formatPrice(Number(formData.price) * 0.05)} XOF</span></p>
                         )}
                     </div>
                     <div>

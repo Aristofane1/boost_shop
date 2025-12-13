@@ -64,14 +64,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               to={item.path}
               onClick={() => onClose()} // Close sidebar on mobile when clicking a link
               className={`
-                flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200
+                flex items-center gap-3 px-4 py-3 rounded-xl text-sm lg:text-base font-semibold transition-all duration-200
                 ${isActive(item.path) 
                   ? 'bg-primary text-white shadow-lg shadow-primary/30' 
                   : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-gray-900 dark:hover:text-white'
                 }
               `}
             >
-              <span className={`material-symbols-outlined ${item.activeIconStyle && isActive(item.path) ? 'fill' : ''}`}>
+              <span className={`material-symbols-outlined text-xl lg:text-2xl ${item.activeIconStyle && isActive(item.path) ? 'fill' : ''}`}>
                 {item.icon}
               </span>
               {item.label}
@@ -81,29 +81,31 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
         {/* Bottom Section */}
         <div className="p-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#0d111a]/50">
-             {/* Admin Link (Demo) */}
-             <Link 
-                to="/admin-system"
-                onClick={() => onClose()}
-                className="flex items-center gap-3 px-4 py-2 mb-2 rounded-lg text-xs font-bold text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors uppercase tracking-wider"
-             >
-                 <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
-                 Super Admin
-             </Link>
+             {/* Admin Link - uniquement pour smith@smith.com */}
+             {localStorage.getItem('userEmail') === 'smith@smith.com' && (
+                <Link 
+                   to="/admin-system"
+                   onClick={() => onClose()}
+                   className="flex items-center gap-3 px-4 py-2 mb-2 rounded-lg text-xs lg:text-sm font-bold text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors uppercase tracking-wider"
+                >
+                    <span className="material-symbols-outlined text-base lg:text-lg">admin_panel_settings</span>
+                    Super Admin
+                </Link>
+             )}
 
              <Link 
                 to="/profile"
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-white dark:hover:bg-[#1f2937] transition-colors border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
              >
                 <div 
-                    className="size-10 rounded-full bg-cover bg-center bg-gray-200"
+                    className="size-10 lg:size-11 rounded-full bg-cover bg-center bg-gray-200"
                     style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiDXjli4rZrciYTNuMShiY3sxsdgCTE_RLFuP5w8xvW5fAr1j08XItmyuXbJ1X9jSPOGXImxenqTejRTCNxtIgaq4IgUKm1Ausjvzfbs46AfkpaTSl9SpiZE8X5fOz8dkGb-J1VOGeTEDYLsUBzvBxW8043zOYwJnuvyuYJmJvGgpnjV36oLFHDyUIIYMogLOxOtVsCBIh7jzi2Pqk33Sdhdk9mAph9RX7t4Ezce-Eh6-N6vQ_4LMLktzIUyikEbecdwCLWsutvT44")' }}
                 ></div>
                 <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-[#111827] dark:text-white truncate">Amadou Diallo</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">Gérant</p>
+                    <p className="text-sm lg:text-base font-bold text-[#111827] dark:text-white truncate">Amadou Diallo</p>
+                    <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 truncate">Gérant</p>
                 </div>
-                <span className="material-symbols-outlined text-gray-400">logout</span>
+                <span className="material-symbols-outlined text-xl lg:text-2xl text-gray-400">logout</span>
              </Link>
         </div>
       </aside>

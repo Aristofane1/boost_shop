@@ -1,24 +1,24 @@
 
 import React, { useState } from 'react';
-import { HashRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
+import { HashRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import LandingPage from './pages/LandingPage';
-import DashboardOverview from './pages/DashboardOverview';
-import ProductsPage from './pages/ProductsPage';
 import AddProductPage from './pages/AddProductPage';
-import DeliveriesPage from './pages/DeliveriesPage';
-import DriversPage from './pages/DriversPage';
+import AdminSystemPage from './pages/AdminSystemPage';
 import AIConfigurationPage from './pages/AIConfigurationPage';
-import ProfilePage from './pages/ProfilePage';
 import AuthPage from './pages/AuthPage';
 import ConnectWhatsAppPage from './pages/ConnectWhatsAppPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsPage from './pages/TermsPage';
-import FinancePage from './pages/FinancePage';
 import CustomersPage from './pages/CustomersPage';
+import DashboardOverview from './pages/DashboardOverview';
+import DeliveriesPage from './pages/DeliveriesPage';
+import DriversPage from './pages/DriversPage';
+import FinancePage from './pages/FinancePage';
+import LandingPage from './pages/LandingPage';
 import MarketingPage from './pages/MarketingPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import ProductsPage from './pages/ProductsPage';
+import ProfilePage from './pages/ProfilePage';
 import SupportPage from './pages/SupportPage';
-import AdminSystemPage from './pages/AdminSystemPage';
+import TermsPage from './pages/TermsPage';
 
 const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -44,10 +44,10 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     onClick={() => setSidebarOpen(true)}
                     className="p-2 -ml-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300"
                 >
-                    <span className="material-symbols-outlined">menu</span>
+                    <span className="material-symbols-outlined text-2xl">menu</span>
                 </button>
                 <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div className="size-8">
+                    <div className="size-8 sm:size-9">
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                             <rect width="40" height="40" rx="12" fill="#16a34a" />
                             <path d="M20 8C22.2091 8 24 9.79086 24 12V14H16V12C16 9.79086 17.7909 8 20 8Z" stroke="white" strokeWidth="2.5"/>
@@ -55,10 +55,17 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
                             <path d="M21 18L17 24H22L19 30L24 23H18L21 18Z" fill="white"/>
                         </svg>
                     </div>
-                    <span className="font-bold text-lg">BoostShop</span>
+                    <span className="font-bold text-lg sm:text-xl">BoostShop</span>
                 </Link>
             </div>
-            <div className="size-8 bg-center bg-no-repeat bg-cover rounded-full" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMN1DRw4KLSu3wy2Xeg-0tHuOO8XUSeelJv1yqujp4J3Pr0w9Dom7j2SJzznDwq3UZXe90u2yqtyZjDPLEbgRiq1WDrrPTtBFNu8wEGO7gKPEXFkH-sBEW-jthiSG7KrRaIslhq3LFL-5Shy0AQiJUfJzz4jmGbcrf5crR8Cfnr4HjxTRiZUxrMp9Cd-hiDTDg8Ah8SJ5jSreIZ4M5j-7dvXdxRWpWQlkE1guAJzYA4shOb7sWNGXCpjUHPYPdFZq5jNFcKc129cQZ")' }}></div>
+            <div className="flex items-center gap-2">
+                <button className="flex items-center justify-center rounded-full w-9 h-9 sm:w-10 sm:h-10 hover:bg-gray-100 dark:hover:bg-white/10">
+                    <span className="material-symbols-outlined text-xl sm:text-2xl">notifications</span>
+                </button>
+                <Link to="/profile">
+                    <div className="size-9 sm:size-10 bg-center bg-no-repeat bg-cover rounded-full" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMN1DRw4KLSu3wy2Xeg-0tHuOO8XUSeelJv1yqujp4J3Pr0w9Dom7j2SJzznDwq3UZXe90u2yqtyZjDPLEbgRiq1WDrrPTtBFNu8wEGO7gKPEXFkH-sBEW-jthiSG7KrRaIslhq3LFL-5Shy0AQiJUfJzz4jmGbcrf5crR8Cfnr4HjxTRiZUxrMp9Cd-hiDTDg8Ah8SJ5jSreIZ4M5j-7dvXdxRWpWQlkE1guAJzYA4shOb7sWNGXCpjUHPYPdFZq5jNFcKc129cQZ")' }}></div>
+                </Link>
+            </div>
         </header>
 
         <main className="flex-1 overflow-y-auto">

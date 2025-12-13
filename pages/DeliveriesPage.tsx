@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Order, DeliveryMode, PaymentMethod, PaymentStatus } from '../types';
+import { DeliveryMode, Order, PaymentMethod, PaymentStatus } from '../types';
 
 const mockOrders: Order[] = [
   { 
@@ -108,10 +108,6 @@ const DeliveriesPage: React.FC = () => {
     <div className="p-6 lg:p-10 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-black text-[#111827] dark:text-white">Gestion des Commandes</h1>
-        <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition-colors">
-          <span className="material-symbols-outlined">add</span>
-          Nouvelle commande
-        </button>
       </div>
 
       {/* Filters */}
